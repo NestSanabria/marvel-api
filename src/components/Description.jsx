@@ -80,14 +80,14 @@ export const Description = () => {
             <div className={`comic-detail ${index === currentComicIndex ? 'active' : 'd-none'}`} key={index}>
               <div className='comic-background'> 
                 <div className="text-white">
-                  <h3>Creadores</h3>
+                  <h3>Autores: </h3>
                   <ul>
                     {comic.creators.items.map((creator, index) => (
                       <li key={index}>{creator.name} - {creator.role}</li>
                     ))}
                   </ul>
 
-                  <h3>Precio</h3>
+                  <h3>Precio: </h3>
                   <h1>
                     {comic.prices.map((price, index) => (
                       <li key={index}>{price.type}: ${price.price}</li>
@@ -99,7 +99,7 @@ export const Description = () => {
                   <p>Text</p>
 
                   {/* Botón de enlace a la página de Marvel */}
-                  <div className='text-left'>
+                  <div>
                     {comic.urls.map((url, index) => (
                       <button key={index} className="btn btn-primary mr-2" onClick={() => window.open(url.url, '_blank')}>Más información</button>
                     ))}
